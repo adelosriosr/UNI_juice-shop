@@ -52,6 +52,12 @@ jobs:
             --sarif \
             --output semgrep.sarif \
             --error || true
+      
+      - name: Subir resultados
+        uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: semgrep.sarif
+          category: semgrep
 
 
         
